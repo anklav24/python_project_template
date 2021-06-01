@@ -1,5 +1,4 @@
 """Logging configuration file."""
-# Standard library
 import os
 from datetime import datetime
 

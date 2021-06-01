@@ -4,7 +4,7 @@
 import logging
 from logging.config import dictConfig
 
-from configs.logs_config import logging_config
+from configs.logging_config import logging_config
 
 dictConfig(logging_config)
 logger = logging.getLogger(__name__)

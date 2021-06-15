@@ -1,8 +1,14 @@
 """Main application configuration settings."""
 import logging
-from os import environ
+import os
 
-token = environ.get('YOUR_API_TOKEN_NAME')
+import dotenv
+
+# Utilities
+dotenv.load_dotenv(os.path.join('configs', '.env'))
+
+# API
+token = os.environ.get('YOUR_API_TOKEN_NAME')
 
 # Logging
 logging_level = "DEBUG"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"

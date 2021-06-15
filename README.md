@@ -34,6 +34,19 @@ python3.X -m venv venv  # Create virtual environment.
 source venv/bin/activate  # Activate virtual environment.
 pip install -U pip  # Update pip.
 pip install -r requirements.txt  # Install requirements.
+```
+
+- Add environment variables (API keys, passwords etc):
+
+```bash
+# In that case we use python-dotenv library to get environment variables.
+cp configs/.env.sample configs/.env  # Make a copy of `.env.sample` and name it `.env`
+vim configs/.env  # Add there `YOUR_ENVIRONMENT_VARIABLES`
+```
+
+- Try to run a python script manually.
+
+```bash
 # Make sure you use LF line separators in your start file.
 python RUN_YOUR_SCRIPT_NAME.py  # Try to run manually.
 ```
@@ -58,7 +71,7 @@ sudo vim /etc/crontab  # Add it to cron.
 `/etc/crontab`
 
 ```bash
-00 3    * * *   root    /PATH/TO/YOUR/PROJECT/FOLDER/RUN_YOUR_SCRIPT_NAME.sh
+00 4    * * *   root    /PATH/TO/YOUR/PROJECT/FOLDER/RUN_YOUR_SCRIPT_NAME.sh
 ```
 
 ### Environment
@@ -69,6 +82,12 @@ sudo vim /etc/crontab  # Add it to cron.
 
 ### Abbreviations
 
+?
+
 ### References
 
+?
+
 ### Source code
+
+?

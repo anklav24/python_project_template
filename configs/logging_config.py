@@ -1,20 +1,20 @@
 """Logging configuration file."""
 import os
+import sys
 from datetime import datetime
+from pathlib import Path
 
 from configs.app_config import logging_level
 
-# replace('\\', '/') for windows capability.
-base_dir_name = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("\\", "/").split("/")[-1]
+run_file_name = Path(sys.argv[0]).stem
 logs_dir_name = "logs"
 
 if not os.path.exists(logs_dir_name):
     os.makedirs(logs_dir_name)
 
 # Example 2021-05-06T16-08-44_base_dir_name.log
-filename = f"{datetime.today().strftime('%Y-%m-%dT%H-%M-%S')}_{base_dir_name}.log"
+filename = f"{datetime.today().strftime('%Y-%m-%dT%H-%M-%S')}_{run_file_name}.log"
 filepath = os.path.join(logs_dir_name, filename)
-
 
 logging_config = dict(
     version=1,
@@ -45,7 +45,7 @@ logging_config = dict(
             'filename': filepath,
             'encoding': 'UTF-8',
             'maxBytes': 10485760,  # 10MB
-            'backupCount': 5
+            'backupCount': 10
         }
     },
     loggers={
